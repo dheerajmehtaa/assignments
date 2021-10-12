@@ -6,6 +6,17 @@
 	<meta Title="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 </head>
+<style>
+	img{
+		width: 20%;
+		height: 10%;
+		margin:5% 5% 5% 0%;
+		align-items: center;
+	}
+	p{
+		
+	}
+</style>
 <body>
 	
 
@@ -48,9 +59,12 @@ let container = document.getElementById("data");
 		let Released = document.createElement("p")
 		Released.innerText = "Released -"  +weather.Released
 
+		let img = document.createElement("img")
+		img.src = weather.Poster
+
 		
 
-		container.append(Title,Year,Released)
+		container.append(img,Title,Year,Released)
 	}
 
 
