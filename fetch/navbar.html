@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.navbar{
+			display: flex;
+			height:150px;
+			width:100%;
+			background-color:#212121;
+			color:white;
+			top:0%;
+			left:0%;
+			position:fixed;
+			
+		}
+		
+	
+		
+
+		.maindiv{
+			display:flex;
+         margin-right: auto;
+		 margin-left:auto;
+		 margin-top:19px;
+		 margin-bottom: 19px;
+		 padding:20px;
+		 justify-content:center;
+		 align-items:center;
+		 border:1px solid red
+		}
+		.depdiv{
+			position:relative;
+			display:block;
+			font-size:20px;
+			font-family: 'Domine', serif;
+           font-family: 'Noto Sans Display', sans-serif;
+		   color:white;
+		   margin:24px;
+		}
+		
+		.search-icon {
+      position: absolute;
+      left: 94%;
+      top: 30%;
+      height: 50%;
+      width: 4%;
+    }
+
+    .search-input {
+      border: 1px solid #a0a0a0;
+      border-radius: 3px;
+      background-color: #f7f7f7;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: 5px;
+      color: #3c3c3c;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: .45px;
+      line-height: 19px;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+	.search-input:focus {
+      border: #a0a0a0 1px solid;
+      outline: none;
+    }
+	.navbar .inp-search {
+      display: flex;
+      position: relative;
+      width: 37.5%;
+      height: 37px;
+
+    }
+	img{
+		width: 200px;
+		height: 60px;
+		margin:5% 8% 5% 0%
+	}
+	
+	</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@500&family=Noto+Sans+Display:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	
+	<div class = "navbar">
+		<div class = "maindiv">
+<div ><img src= "https://www.logo.wine/a/logo/YouTube/YouTube-White-Full-Color-Dark-Background-Logo.wine.svg" /></div>
+<div class = "depdiv">Departments</div>
+<div class = "depdiv">Services</div>
+<div class="inp-search">
+
+
+	<input type="text" placeholder="Search everything at Walmart online and in store" class="search-input" size = "80" />
+
+	<img class="search-icon" src="https://img10.hkrtcdn.com/react/static/media/common/header/search-icon-grey-2.svg"
+	  alt="5" />
+  </div>
+<div class = "depdiv">My Items</div>
+<h4></h4>
+<div class = "depdiv" >Account</div>
+<div id = "cart" class = "depdiv">Cart</div>
+	
+
+
+
+
+</body>
+</html>
+
+
+
