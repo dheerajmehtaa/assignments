@@ -41,6 +41,7 @@ let container = document.getElementById("data");
 
 	 let data = await res.json();
 	 console.log(data);
+	 
 	
 	 moviesearch(data);
 	}
@@ -62,14 +63,17 @@ let container = document.getElementById("data");
 		let img = document.createElement("img")
 		img.src = Movie.Poster
 
+		let Actors = document.createElement("p")
+		Actors.innerText = ( "Actors - " + Movie.Actors)
+
 		
 
-		container.append(img,Title,Year,Released)
+		container.append(img,Title,Year,Released,Actors)
 	}
 
 
 
-
+      
 
 
 
