@@ -88,10 +88,11 @@
 	}
 	
 	.content{
-         width: 100%;
-		 height:100%;
-		 border: 0px solid green;
+         width: 2800px;
+		 height:2500px;
+		 border: 1px solid red;
 		 background-color:#212121;
+		 margin: 154px 10px 0px -10px;
 	}
 
 	  #videos{
@@ -153,7 +154,9 @@
 
 		let query = document.getElementById("query").value
 	let res = await fetch(
-		`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY&maxResults=20`
+		`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY&maxResults=16&chart=mostPopular&reginCode=IN`
+	//	`https://youtube.googleapis.com/youtube/v3/videos?part=string&chart=mostPopular&id=video%20ID&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY`
+
 	);
 
 	let data = await res.json();

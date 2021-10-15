@@ -42,25 +42,25 @@ let container = document.getElementById("data");
 	 let data = await res.json();
 	 console.log(data);
 	
-	 showWeather(data);
+	 moviesearch(data);
 	}
 
 
 
-	function showWeather(weather){
+	function moviesearch(Movie){
 		container.innerHTML = null;
 		
 		let Title = document.createElement("p");
-		Title.innerText = (  "Movie  -"+ weather.Title);
+		Title.innerText = (  "Movie  -"+ Movie.Title);
 
 		let Year = document.createElement("p");
-		Year.innerText = (  "Year -"+ weather.Year)
+		Year.innerText = (  "Year -"+ Movie.Year)
 
 		let Released = document.createElement("p")
-		Released.innerText = "Released -"  +weather.Released
+		Released.innerText = "Released -"  +Movie.Released
 
 		let img = document.createElement("img")
-		img.src = weather.Poster
+		img.src = Movie.Poster
 
 		
 
