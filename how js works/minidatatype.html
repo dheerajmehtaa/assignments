@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="obj">Objects</button>
+    <button class="arr">Arrays</button>
+    <button class="fun">Functions</button>
+    <button class="str">Strings</button>
+    <button class="num">Numbers</button>
+    <button class="nul">null</button>
+    <button class="und">undefined</button>
+    <hr>
+    <div class="info"></div>
+
+    <script>
+        let info = document.querySelector(".info");
+
+        document.querySelector(".obj").addEventListener("click", e => {
+
+            info.innerHTML = "";  //Clears the content shown in div by previous buttonClick. VImp.
+
+            let ul = document.createElement("ul");
+            let li1 = document.createElement("li");
+            let li2 = document.createElement("li");
+            let li3 = document.createElement("li");
+            let li4 = document.createElement("li");
+            let li5 = document.createElement("li");
+
+            li1.textContent = "Objects are Non-Primitive Data Types";
+            li2.textContent = "Objects are Mutable";
+            li3.textContent = "Objects can be made Immutable by using freeze() method";
+            li4.textContent = "Objects represent 'Key: Value' pairs";
+            li5.textContent = "HTML elements are stored as Objects inside DOM";
+
+            info.appendChild(ul);
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+            ul.appendChild(li4);
+            ul.appendChild(li5);
+        })
+
+        document.querySelector(".arr").addEventListener("click", e => {
+
+            info.innerHTML = ""; 
+
+            let ul = document.createElement("ul");
+            let li1 = document.createElement("li");
+            let li2 = document.createElement("li");
+            let li3 = document.createElement("li");
+            let li4 = document.createElement("li");
+            let li5 = document.createElement("li");
+
+            li1.textContent = "Arrays are Non-Primitive Data Types";
+            li2.textContent = "Arrays are Mutable";
+            li3.textContent = "Array elements are stored in Linear order";
+            li4.textContent = "Array name represents base Address";
+            li5.textContent = "Array index starts at 0 and goes upto n";
+
+            info.appendChild(ul);
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+            ul.appendChild(li4);
+            ul.appendChild(li5);
+        })
+
+        document.querySelector(".fun").addEventListener("click", e => {
+
+            info.innerHTML = "";  
+
+            let ul = document.createElement("ul");
+            let li1 = document.createElement("li");
+            let li2 = document.createElement("li");
+            let li3 = document.createElement("li");
+            let li4 = document.createElement("li");
+            let li5 = document.createElement("li");
+
+            li1.textContent = "Functions are Non-Primitive Data Types";
+            li2.textContent = "Function declarations are hoisted at top by Javascript Engine";
+            li3.textContent = "Functions are Mutable";
+            li4.textContent = "Functions have Local Scope";
+            li5.textContent = "Functional Execution Context is created whenever Function is called";
+
+            info.appendChild(ul);
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+            ul.appendChild(li4);
+            ul.appendChild(li5);
+        })
+        
+        document.querySelector(".str").addEventListener("click", e => {
+
+            info.innerHTML = "";  
+
+            let ul = document.createElement("ul");
+            let li1 = document.createElement("li");
+            let li2 = document.createElement("li");
+            let li3 = document.createElement("li");
+            let li4 = document.createElement("li");
+            let li5 = document.createElement("li");
+
+            li1.textContent = "Strings are Primitve data types";
+            li2.textContent = "Being primitive, Strings hold the actual value of it.";
+            li3.textContent = "Strings are Immutable";
+            li4.textContent = "String declarations are hoisted at top by JS Engine";
+            li5.textContent = "String is a finite sequence of Characters";
+
+            info.appendChild(ul);
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+            ul.appendChild(li4);
+            ul.appendChild(li5);
+        })
+
+        document.querySelector(".num").addEventListener("click", e => {
+
+            info.innerHTML = "";  
+
+            let ul = document.createElement("ul");
+            let li1 = document.createElement("li");
+            let li2 = document.createElement("li");
+            let li3 = document.createElement("li");
+            let li4 = document.createElement("li");
+            let li5 = document.createElement("li");
+
+            li1.textContent = "Numbers are Primitive data types";
+            li2.textContent = "Being primitive, They hold the actual Value";
+            li3.textContent = "Number data type is Immutable";
+            li4.textContent = "Number data type enables us to carry our arithmetic operations";
+            li5.textContent = "The whole Computer Science is based on Numbers";
+
+            info.appendChild(ul);
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+            ul.appendChild(li4);
+            ul.appendChild(li5);
+        })
+
+        document.querySelector(".nul").addEventListener("click", e => {
+
+            info.innerHTML = "";  
+
+            let ul = document.createElement("ul");
+            let li1 = document.createElement("li");
+            let li2 = document.createElement("li");
+            let li3 = document.createElement("li");
+            let li4 = document.createElement("li");
+            let li5 = document.createElement("li");
+
+            li1.textContent = "Null means absence of any value";
+            li2.textContent = "Thing to note - Null does NOT mean Zero, It's just No Value";
+            li3.textContent = "Null is Primitive";
+            li4.textContent = "Hence its Immutable";
+
+            info.appendChild(ul);
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+            ul.appendChild(li4);
+        })
+
+        document.querySelector(".und").addEventListener("click", e => {
+
+            info.innerHTML = "";  
+
+            let ul = document.createElement("ul");
+            let li1 = document.createElement("li");
+            let li2 = document.createElement("li");
+            let li3 = document.createElement("li");
+            let li4 = document.createElement("li");
+            let li5 = document.createElement("li");
+
+            li1.textContent = "Undefined means something that is NOT Defined";
+            li2.textContent = "It is different from Null and Zero value";
+            li3.textContent = "Undefined is a Primitive data type";
+            li4.textContent = "Hence it is Immutable";
+
+            info.appendChild(ul);
+            ul.appendChild(li1);
+            ul.appendChild(li2);
+            ul.appendChild(li3);
+            ul.appendChild(li4);
+        })
+
+    </script>
+</body>
+</html>

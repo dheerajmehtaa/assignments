@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #products {
+        margin: 5% 5% 10% 5%;
+        border: 1px solid black;
+        height: 600px;
+
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        grid-gap: 5%;
+        justify-content: center;
+    }
+
+    img {
+        width: 80%;
+    }
+
+
+</style>
+
+<body>
+    <h1>Movies</h1>
+
+    <button onclick="sortHL()">Sort by Rating: High to Low</button>
+    <button onclick="sortLH()">Sort by Rating: Low to High</button>
+
+    <div id="products"></div>
+</body>
+</html>
+
+<script>
+
+let data = [
+		{
+			name: "Inception",
+			rating: 8.7,
+			year: 2010
+		},
+		{
+			name: "Forrest Gump",
+			rating: 8.6,
+			year: 1994
+		},
+		{
+			name: "The Godfather",
+			rating: 9.1,
+			year: 1974
+		},
+		{
+			name: "Avengers Endgame",
+			rating: 8.2,
+			year: 2019
+		},
+		{
+			name: "The Dark Knight",
+			rating: 8.4,
+			year: 2006
+		},
+		{
+			name: "Conjuring",
+			rating: 7.2,
+			year: 2013
+		},
+		{
+			name: "Toy Story",
+			rating: 7.8,
+			year: 2002
+		},
+		{
+			name: "Jurassic World",
+			rating: 6.8,
+			year: 2016
+		},
+		{
+			name: "Psycho",
+			rating: 7.7,
+			year: 1960
+		}
+	]
+
+//Code Below
+
+let parent = document.querySelector("#products");
+
+function showProducts() {
+
+    parent.innerHTML = null;
+
+    data.forEach(product => {
+    //console.log(product.name);
+
+    let div = document.createElement("div");
+
+    let name = document.createElement("h4");
+
+    name.textContent = product.name;
+
+    let rating = document.createElement("p");
+
+    rating.textContent = product.rating;
+
+    let year = document.createElement("p");
+
+    year.textContent = product.year;
+
+    div.append(name, rating, year);
+
+
+    parent.append(div);
+});    
+
+}
+
+showProducts();
+
+function sortLH() {
+
+let arr = data.sort(function(a,b){
+
+return a.rating - b.rating;
+
+});
+
+showProducts(arr);
+
+}
+
+function sortHL() {
+
+let arr = data.sort(function(a,b){
+
+return b.rating - a.rating;
+
+});
+
+showProducts(arr);
+
+}
+
+
+
+
+</script>
