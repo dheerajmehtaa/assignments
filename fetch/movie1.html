@@ -51,24 +51,24 @@ let container = document.getElementById("data");
 	function moviesearch(Movie){
 		container.innerHTML = null;
 		
-		let Title = document.createElement("p");
-		Title.innerText = (  "Movie  -"+ Movie.Title);
+		// let Title = document.createElement("p");
+		// Title.innerText = (  "Movie  -"+ Movie.Title);
 
-		let Year = document.createElement("p");
-		Year.innerText = (  "Year -"+ Movie.Year)
+		// // let Year = document.createElement("p");
+		// // Year.innerText = (  "Year -"+ Movie.Year)
 
-		let Released = document.createElement("p")
-		Released.innerText = "Released -"  +Movie.Released
+		// // let Released = document.createElement("p")
+		// // Released.innerText = "Released -"  +Movie.Released
 
-		let img = document.createElement("img")
-		img.src = Movie.Poster
+		// // let img = document.createElement("img")
+		// // img.src = Movie.Poster
 
-		let Actors = document.createElement("p")
-		Actors.innerText = ( "Actors - " + Movie.Actors)
+		// // let Actors = document.createElement("p")
+		// // Actors.innerText = ( "Actors - " + Movie.Actors)
 
 		
 
-		container.append(img,Title,Year,Released,Actors)
+		container.append(Title)
 	}
 
 

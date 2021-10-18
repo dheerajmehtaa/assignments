@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <style>
-
-.navbar{
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	.navbar{
 			display: flex;
 			height:150px;
 			width:100%;
@@ -84,9 +83,8 @@
 		width: 200px;
 		height: 60px;
 		margin:5% 18% 5% 0%;
-		
 	}
-	
+
 	.content{
          width: 2800px;
 		 height:2500px;
@@ -114,13 +112,15 @@
 		  margin-top:0%;
 		  margin-right:2%
 	  }
-  </style>
-  <body>
+</style>
+<body>
 
-		
+			
 	<div class = "navbar">
 		<div class = "maindiv">
-<div ><img src= "https://www.logo.wine/a/logo/YouTube/YouTube-White-Full-Color-Dark-Background-Logo.wine.svg" /></div>
+<div ><h1>News</h1>
+	<!-- <img src= "https://www.logo.wine/a/logo/YouTube/YouTube-White-Full-Color-Dark-Background-Logo.wine.svg" /> -->
+</div>
 <div class = "depdiv"></div>
 <div class = "depdiv"></div>
 <div class="inp-search">
@@ -146,6 +146,8 @@
 		</div>
   
   </body>
+	
+</body>
 </html>
 
 <script>
@@ -155,7 +157,7 @@
 		let query = document.getElementById("query").value
 	let res = await fetch(
 		`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY&maxResults=16&chart=mostPopular&reginCode=IN`
-		//`https://youtube.googleapis.com/youtube/v3/videos?part=string&chart=mostPopular&id=video%20ID&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY`
+	//	`https://youtube.googleapis.com/youtube/v3/videos?part=string&chart=mostPopular&id=video%20ID&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY`
 
 	);
 
@@ -183,7 +185,3 @@ function appendVideos(video_data){
 	});
 }
 </script>
-
-
-
-

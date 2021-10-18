@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search</title>
+</head>
+<style>
+	
+	#nav{
+		display:flex;
+		width:100%;
+		padding:10px;
+		background-color:goldenrod;
+	}
+	#nav > div{
+		width:30%;
+	}
+	#nav >div:nth-child(2){
+     flex-grow: 1;
+	}
+	#data{
+		width:70%;
+		padding:10px;
+
+	}
+	#search{
+		width:20%;
+		padding:10px;
+
+	}
+	#items > div{
+		background-color:aqua
+	}
+	img{
+		width:30%;
+
+	}
+	.innerdiv{
+		display:flex
+	}
+	.innerdiv > div , .inner_div > p{
+		width:30%;
+		margin-right:5%
+	}
+	</style>
+<body>
+	<input type ="text" id = "title" placeholder ="Enter name"/>
+	<button onclick ="newsearch()">get news</button>
+	<div id ="data"></div>
+</body>
+</html>
+<script>
+
+	let container = document.getElementById("data");
+	async function getNews(){
+ 
+		let abc = document.getElementById("title").value
+let res = await fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&t=${abc}&apiKey=6f8ecab3a3f54e338e4637ec59776c65`);
+//6f8ecab3a3f54e338e4637ec59776c65
+
+let data = await res.json();
+console.log(data.articles)
+newsearch(data.articles)
+}
+getNews()
+function newsearch(movs){
+
+	movs.forEach((mov)=>{
+		container.innerHTML =null;
+		let div = document.createElement("div")
+	let author = document.createElement("p")
+	author.innerText = mov.author
+	let title = document.createElement("p")
+	title.innerText = mov.title
+	//console.log(author)
+	div.append(author,title)
+	container.append(div)
+});
+
+}
+</script>

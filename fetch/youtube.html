@@ -31,6 +31,8 @@
 		 align-items:center;
 	
 		}
+
+		
 		.depdiv{
 			position:relative;
 			display:block;
@@ -154,8 +156,8 @@
 
 		let query = document.getElementById("query").value
 	let res = await fetch(
-		`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY&maxResults=16&chart=mostPopular&reginCode=IN`
-	//	`https://youtube.googleapis.com/youtube/v3/videos?part=string&chart=mostPopular&id=video%20ID&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY`
+	//	`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY&maxResults=16&chart=mostPopular&reginCode=IN`
+		`https://youtube.googleapis.com/youtube/v3/videos?part=string&chart=mostPopular&id=video%20ID&key=AIzaSyA29-6A3q2Z6Jh8EsR9sGqR1QNUH6UpYuY`
 
 	);
 

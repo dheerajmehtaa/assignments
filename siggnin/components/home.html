@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DHome</title>
+</head>
+<style>
+	
+	#nav{
+		display: flex;
+		width:100%;
+		padding:10px;
+		background-color:goldenrod;
+	}
+	#nav > div{
+		width:30%;
+	}
+	#nav >div:nth-child(2){
+     flex-grow: 1;
+	}
+	#data{
+		width:70%;
+		padding:10px;
+
+	}
+	#search{
+		width:20%;
+		padding:10px;
+
+	}
+	#items > div{
+		background-color:rgb(226, 246, 251);
+		margin: 5% 10%;
+		border-radius: 5%;
+		padding:10px 10px 10px 50px;
+	}
+	img{
+		width:30%;
+
+	}
+	.innerdiv{
+		display:flex
+	}
+	.innerdiv > div , .inner_div > p{
+		width:30%;
+		margin-right:5%
+	}
+</style>
+<body>
+<div id ="nav">
+	<div>.</div>
+	<div><h1>Top Headline</h1></div>
+	<div id = "data"></div>
+	<div>.</div>
+</div>
+<div id = "items"></div>
+</body>
+</html>
+
+<script>
+
+
+async function getNews(){
+
+	let res = await fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=6f8ecab3a3f54e338e4637ec59776c65`);
+	//6f8ecab3a3f54e338e4637ec59776c65
+
+	let data = await res.json();
+	console.log(data.articles)
+	NewSearch(data.articles)
+}
+getNews()
+let container = document.getElementById("items")
+function NewSearch(items){
+//	container.innerHTML =null
+	items.forEach((item)=>{
+    let div = document.createElement("div");
+	div.setAttribute("class","inner_div");
+
+	let div2 = document.createElement("div");
+	div2.setAttribute("class","inner2_div");
+	
+
+	let author = document.createElement("p")
+	author.innerText= ("Author: "+item.author)
+	console.log(author)
+     
+	let title = document.createElement("h3")
+	title.innerText = item.title
+	console.log(title)
+
+	let content = document.createElement("p")
+	content.innerText = item.content
+	console.log(content)
+
+	let publishedAt= document.createElement("p")
+	publishedAt.innerText = item.publishedAt
+
+	let urlToImage =document.createElement("img")
+	urlToImage.src = item.urlToImage
+	let description = document.createElement("p")
+	description.innerText =item.description
+	//console.log(title)
+
+
+    div2.append(title,author,publishedAt)
+	div.append(urlToImage,div2,description,)
+	container.append(div)
+	});
+
+	
+	
+}
+NewSearch()
+</script>

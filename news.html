@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dummy</title>
+</head>
+<style>
+	content{
+		width: 20%;
+		height: 10%;
+		margin:5% 5% 5% 0%;
+		align-items: center;
+	}
+</style>
+<body>
+	<input type = "text" id = "author" placeholder ="Enter movie author"/>
+
+	<button onclick = "getWeather()">Get Movie</button>
+
+	<div id = "data"></div>
+</body>
+</html>
+<script>
+
+let container = document.getElementById("data");
+     async function getWeather(){
+
+	let author = document.getElementById("author").value;
+     let res =  await fetch(
+		`https://newsapi.org/v2/everything?q=${author}&from=2021-09-18&sortBy=publishedAt&apiKey=ad5ef6e6569b482581808d07e60c15a0`
+		 );
+
+	 let data = await res.json();
+	 console.log(data.articles);
+	 
+	
+	 moviesearch(data);
+	}
+
+
+
+	function moviesearch(data){
+		container.innerHTML = null;
+
+		data.forEach(function(product){
+			let author = document.createElement("p");
+		author.innerText = ( product.author);
+		console.log(author)
+
+		let title = document.createElement("p");
+		title.innerText = ( News.title)
+
+		container.append(title,author)
+		});
+		
+	
+		// let Released = document.createElement("p")
+		// Released.innerText = "Released -"  +Movie.Released
+
+		// let content = document.createElement("content")
+		// content.src = Movie.Poster
+
+		// let Actors = document.createElement("p")
+		// Actors.innerText = ( "Actors - " + Movie.Actors)
+
+		
+
+	}
+
+</script>
