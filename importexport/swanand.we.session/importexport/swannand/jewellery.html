@@ -24,13 +24,14 @@
 
 	navbar_div.innerHTML = navbar();
 
-	let response = getData(`www.themealdb.com/api/json/v1/1/filter.php?a=Canadian`)
+	let response = getData(`https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian`)
+	console.log(response)
 	
 	response.then((res) => {
 		let container = document.getElementById("container")
 		append(res,container);
 	})
-	.catch((error) => {
-      console.log(err)
-	});
+	.catch((err) => {
+		console.log(err)
+	})
 </script>

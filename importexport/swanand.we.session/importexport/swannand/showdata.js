@@ -8,14 +8,14 @@ async function getData(url){
 
 function append(data,container){
 
-	data.forEach(({title,image} ) =>{
+	data.forEach(({strMeal,strMealThumb} ) =>{
 		let div = document.createElement('div');
 		let p = document.createElement('p');
 
-		p.innerText = title
+		p.innerText = strMeal
 
 		let img = document.createElement('img');
-		img.src =image
+		img.src =strMealThumb
 
 		div.append(img,p)
 
