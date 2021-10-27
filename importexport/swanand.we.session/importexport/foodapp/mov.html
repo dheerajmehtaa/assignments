@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+    
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body{
+            background-color: #35212A;
+            
+        }
+         #display{
+            display: grid;
+            grid-template-columns: repeat(3, 31%);
+            margin: 5% 2% 0% -2%;
+            grid-gap:25px;
+            /* height: 99vh; */
+            position: relative;
+            cursor: pointer;
+            /* background-color: #33135C; */
+           
+        }
+
+        img{
+            margin: 10% 12% 14% 12%;
+            width: 75%;
+            height: 220px;
+        }
+
+       input{
+            margin: 8% 5% 8% 6%;
+            height: 1.5em;
+            width: 15em;
+            outline: none;
+            border: 0.5px solid gray;
+            padding: 0.7em;
+            background-color: #ffdef3;
+            border-radius: 5px;
+            /* box-shadow:
+                0 0 0.1vw  0.2vw #fff7f7,   
+                0 0 0.2vw  0.3vw #e97272, 
+                0 0   2vw  0.3vw #ff61be,
+                inset 0 0 1vw  0.2vw #ff61be,
+                inset 0 0 0.2vw  0.1vw #e97272,
+                inset 0 0 0.2vw  0.1vw #fff7f7; */
+        }
+
+        input[type="text"]::placeholder { 
+                  
+                  text-align: center;
+                  color: #35212A;
+              }
+
+        button{
+            border: none;
+            height: 3em;
+            width: 8em;
+            background-color: #ff61be;
+            color: blanchedalmond;
+            box-shadow:
+                0 0 0.1vw  0.2vw #fff7f7,   
+                0 0 0.2vw  0.3vw #e97272, 
+                0 0   2vw  0.3vw #ff61be,
+                inset 0 0 1vw  0.2vw #ff61be,
+                inset 0 0 0.2vw  0.1vw #e97272,
+                inset 0 0 0.2vw  0.1vw #fff7f7;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #container{
+            display: flex;
+        }
+
+        #cont{
+            display: flex;
+            flex-direction: column;
+            margin-left: 35%;
+            height: 50%;
+            width: 70%;
+        }
+
+        #input{
+            position: fixed;
+            height: 100vh;
+            width: 30%;
+            background-color: #35212A;
+            box-shadow: 1px 3px 15px black;
+        }
+
+        #movies {
+        height: 230px;
+        width: 13.7em;
+        margin-top: -7.8%;
+        margin-left: 5.9%;
+        background-color: #35212A;
+        overflow: scroll;
+        border-top: none;
+        display: none;
+        overflow-x: hidden;
+        cursor: pointer;
+        /* background-color: white; */
+        }
+
+        #Categories{
+            color: #ffdef3;
+            margin: 5% 10%;
+            display: flex;
+            flex-direction: column;
+            /* width: 80%; */
+            /* box-shadow:
+                0 0 0.1vw  0.4vw #fff7f7,   
+                0 0 0.4vw  0.6vw #e97272, 
+                0 0   4vw  0.4vw #ff61be,
+                inset 0 0 1.5vw  0.4vw #ff61be,
+                inset 0 0 0.4vw  0.2vw #e97272,
+                inset 0 0 0.5vw  0.2vw #fff7f7;
+                border-radius: 1.5rem;
+            padding-bottom: 4%; */
+        }
+
+        #Categories > p {
+            margin: 5% 10% 5% 28%;
+            font-size: 200%;
+            text-shadow: 
+            .1vw 0vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, 0vw 0vw .25vw #ffd8d8,
+            .1vw 0vw   1vw #ff61be, .2vw 0vw   1vw #ff61be, .4vw 0vw   5vw #ff61be;
+        }
+
+        #neon{
+            color:#ffd8d8;
+            width: 180%;
+            font-size: 700%;
+            margin:30% 40% 0% 40%;
+            padding-left: 50%;
+            justify-content: center;
+            font-family: 'Train One', cursive;
+            text-shadow: 
+            .1vw 0vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, .4vw 0vw .25vw #ffd8d8, 
+
+            .1vw 0vw   0vw #fa88ca, .2vw 0vw   0vw #fa88ca, .4vw 0vw   0vw #fa88ca,
+            .1vw 0vw  .1vw #fa88ca, .2vw 0vw  .1vw #fa88ca, .4vw 0vw  .1vw #fa88ca,
+            .1vw 0vw   2vw #fa88ca, .2vw 0vw   2vw #fa88ca, .4vw 0vw   2vw #fa88ca, 
+
+            .1vw 0vw   1vw #ff61be, .2vw 0vw   1vw #ff61be, .4vw 0vw   5vw #ff61be, 
+            .1vw 0vw   5vw #ff61be, .2vw 0vw  20vw #ff61be, .4vw 0vw  10vw #ff61be,
+            .1vw 0vw  10vw #ff61be, .2vw 0vw  30vw #ff61be, .4vw 0vw  10vw #ff61be;
+
+            border: 1px solid #ffd8d8;
+            /* box-shadow:
+                0 0 0.1vw  0.4vw #fff7f7,   
+                0 0 0.4vw  0.6vw #e97272, 
+                0 0   4vw  0.4vw #ff61be,
+                inset 0 0 1.5vw  0.4vw #ff61be,
+                inset 0 0 0.4vw  0.2vw #e97272,
+                inset 0 0 0.5vw  0.2vw #fff7f7; */
+
+                box-shadow:
+                0 0 0.1vw  0.2vw #fff7f7,   
+                0 0 0.2vw  0.3vw #e97272, 
+                0 0   2vw  0.3vw #ff61be,
+                inset 0 0 1vw  0.2vw #ff61be,
+                inset 0 0 0.2vw  0.1vw #e97272,
+                inset 0 0 0.2vw  0.1vw #fff7f7;
+            border-radius: 1rem;
+        }
+
+        .neon-sub{
+            color:#ffd8d8;
+            /* display: inline; */
+            width: 200%;
+            font-size: 200%;
+            margin: 10% 80%;
+            text-shadow: 
+            .1vw 0vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, 0vw 0vw .25vw #ffd8d8,
+            .1vw 0vw   1vw #ff61be, .2vw 0vw   1vw #ff61be, .4vw 0vw   5vw #ff61be;
+        }
+       
+    </style>
+</head>
+
+
+
+
+<body>
+    <div id="container">
+        <div id="input">
+            <input oninput="debounce(main,1000)" type="text" id="movie" placeholder="Enter Movie">
+            <button onclick="searchMovie()">Get Movie</button>
+            <div id="movies"></div>
+
+            <div id="Categories">
+                <p onclick="getPopular()" style="cursor: pointer;">P o p u l a r</p>
+                <p onclick="getThriller()" style="cursor: pointer;">T h r i l l e r</p>
+                <p onclick="getComedy()" style="cursor: pointer;">C o m e d y</p>
+                <p onclick="getAction()" style="cursor: pointer;">A c t i o n</p>
+                <p onclick="getDrama()" style="cursor: pointer;">D r a m a</p>
+                <p onclick="getRomance()" style="cursor: pointer;">R o m a n c e</p>
+                <p onclick="getHorror()" style="cursor: pointer;">H o r r o r</p>
+            </div>
+        </div>
+
+        <div id="cont">
+            <div id="content"></div>
+            <div id="display">
+               <div>
+                   <h1  id="neon">Lights <span style="margin-left: 10%;">Out!</span></h1>
+                   <div class="neon-sub">
+                    One stop destination for movies.
+                   </div>
+                <div>
+        </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+    <script>
+
+        let container = document.getElementById("display");
+        let show = document.getElementById("content");
+
+        async function searchMovie(){
+            show.innerHTML = null;
+            let movieTitle = document.getElementById("movie").value;
+           
+            let res = await fetch(`http://www.omdbapi.com/?apikey=a29288ed&s=${movieTitle}&plot=short&r=json`);
+            let data = await res.json();
+            // console.log(data);
+            showMovie(data.Search);
+        }
+       function showMovie(movies){
+            container.innerHTML = null;
+            
+            movies.forEach(function(movie){
+                let div = document.createElement('div');
+                let poster = document.createElement('img');
+                let title = document.createElement('p');
+
+                poster.src = movie.Poster;
+                title.innerText = movie.Title;
+
+                div.style.boxShadow = "0 0 0.1vw  0.2vw #fff7f7, 0 0 0.2vw  0.3vw #e97272, 0 0   2vw  0.3vw #ff61be, inset 0 0 1vw  0.2vw #ff61be, inset 0 0 0.2vw  0.1vw #e97272, inset 0 0 0.2vw  0.1vw #fff7f7";
+                
+                div.style.height = "105%"
+                div.style.borderRadius = "2px";
+                div.style.margin = "2%";
+
+                title.style.color = "#ffdef3";
+                title.style.textAlign = "center";
+                title.style.alignItems = "center";
+                title.style.maxWidth = "80%";
+                title.style.margin = "-10% 0% 0% 9%";
+                
+
+                div.append(poster, title);
+                container.append(div);
+
+                div.onclick = function(){
+                    getMovie(movie.Title);
+                };
+            });
+        }  
+
+
+
+
+        async function getMovie(movie){
+           
+            let res = await fetch(`http://www.omdbapi.com/?&apikey=a29288ed&t=${movie}&plot=short&r=json`);
+            let data = await res.json();
+            // console.log(data);
+            openMovie(data);
+        }
+
+        function openMovie(mov){
+            container.innerHTML = null;
+            show.innerHTML = null;
+            let div = document.createElement('div');
+            let text = document.createElement('p');
+            let button = document.createElement('button');
+            let poster = document.createElement('img');
+            let title = document.createElement('p');
+            let release = document.createElement('p');
+            let director = document.createElement('p');
+            let rating = document.createElement('p');
+
+
+            button.innerText = "Back";
+            poster.src = mov.Poster;
+            title.innerText = `Title: ${mov.Title}`;
+            release.innerText = `Released: ${mov.Released}`;
+            director.innerText = `Director: ${mov.Director}`;
+            rating.innerText = `Rating: ${mov.imdbRating}`;
+
+           
+            poster.style.marginTop = "8%";
+            poster.style.width = "30%"
+            poster.style.height = "40%"
+            poster.style.marginLeft = "55%"
+
+            button.style.marginLeft = "80%";
+            button.style.marginTop = "5%";
+
+            text.style.marginTop = "-25%";
+            text.style.marginLeft = "8%";
+            text.style.color = "#ffdef3";
+
+            show.style.marginTop = "6%";
+            show.style.marginLeft = "2%";
+            show.style.paddingBottom = "5%";
+            show.style.width = "90%";
+            show.style.boxShadow = "0 0 0.1vw  0.2vw #fff7f7, 0 0 0.2vw  0.3vw #e97272, 0 0   2vw  0.3vw #ff61be, inset 0 0 1vw  0.2vw #ff61be, inset 0 0 0.2vw  0.1vw #e97272, inset 0 0 0.2vw  0.1vw #fff7f7";
+
+            container.style.height = "1%"
+
+            let recommended =  document.createElement('p');
+            recommended.innerText = "Recommended";
+         // recommended.style.textShadow = ".1vw 0vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, 0vw 0vw .25vw #ffd8d8, .1vw 0vw   1vw #ff61be, .2vw 0vw   1vw #ff61be, .4vw 0vw   5vw #ff61be;"
+
+            if(+(mov.imdbRating) > 8.5)
+            {
+               
+               text.append(title, release, director, rating, recommended)
+               div.append(button, poster);
+               show.append(div);
+               show.append(text);
+              
+            }
+            else
+            {
+                text.append(title, release, director, rating)
+               div.append(button, poster);
+               show.append(div);
+               show.append(text);
+            }
+            
+            button.onclick = function() {
+                getBack();
+            }
+
+        }
+
+        async function getBack(){
+            show.innerHTML = null;
+            show.style.boxShadow = "none";
+            container.style.marginTop = "-5%";
+            let movieTitle = document.getElementById("movie").value;
+           
+            let res = await fetch(`http://www.omdbapi.com/?apikey=a29288ed&s=${movieTitle}&plot=short&r=json`);
+            let data = await res.json();
+            // console.log(data);
+            showMovie(data.Search);
+        }
+
+
+
+        async function getPopular(){
+
+            let res = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=99b40b43b8857f9096bcc0b98595a225&language=en-US&page=1");
+            let data = await  res.json();
+            console.log(data.results);
+            showMovies(data.results);
+        }
+
+        async function getHorror(){
+
+        let res = await fetch("https://api.themoviedb.org/3/discover/movie?api_key=99b40b43b8857f9096bcc0b98595a225&language=en-US&sort_by=popularity.desc&with_genres=27");
+        let data = await  res.json();
+        console.log(data);
+        showMovies(data.results);
+        }
+
+        async function getAction(){
+
+        let res = await fetch("https://api.themoviedb.org/3/discover/movie?api_key=99b40b43b8857f9096bcc0b98595a225&language=en-US&sort_by=popularity.desc&with_genres=28");
+        let data = await  res.json();
+        console.log(data);
+        showMovies(data.results);
+        }
+
+        async function getComedy(){
+
+        let res = await fetch("https://api.themoviedb.org/3/discover/movie?api_key=99b40b43b8857f9096bcc0b98595a225&language=en-US&sort_by=popularity.desc&with_genres=35");
+        let data = await  res.json();
+        console.log(data);
+        showMovies(data.results);
+        }
+
+        async function getDrama(){
+
+        let res = await fetch("https://api.themoviedb.org/3/discover/movie?api_key=99b40b43b8857f9096bcc0b98595a225&language=en-US&sort_by=popularity.desc&with_genres=18");
+        let data = await  res.json();
+        console.log(data);
+        showMovies(data.results);
+        }
+
+        async function getThriller(){
+
+        let res = await fetch("https://api.themoviedb.org/3/discover/movie?api_key=99b40b43b8857f9096bcc0b98595a225&language=en-US&sort_by=popularity.desc&with_genres=53");
+        let data = await  res.json();
+        console.log(data);
+        showMovies(data.results);
+        }
+
+        async function getRomance(){
+
+        let res = await fetch("https://api.themoviedb.org/3/discover/movie?api_key=99b40b43b8857f9096bcc0b98595a225&language=en-US&sort_by=popularity.desc&with_genres=53");
+        let data = await  res.json();
+        console.log(data);
+        showMovies(data.results);
+        }
+
+
+        function showMovies(movies){
+            container.innerHTML = null;
+            show.innerHTML = null;
+            show.style.boxShadow = "none";
+            container.style.marginTop = "3%";
+            movies.forEach(function(movie){
+                let div = document.createElement('div');
+                let poster = document.createElement('img');
+                let title = document.createElement('p');
+
+                poster.src = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
+                title.innerText = movie.title;
+
+                div.style.boxShadow = "0 0 0.1vw  0.2vw #fff7f7, 0 0 0.2vw  0.3vw #e97272, 0 0   2vw  0.3vw #ff61be, inset 0 0 1vw  0.2vw #ff61be, inset 0 0 0.2vw  0.1vw #e97272, inset 0 0 0.2vw  0.1vw #fff7f7";
+                
+                div.style.height = "105%"
+                div.style.borderRadius = "2px";
+                div.style.margin = "2%";
+
+                title.style.color = "#ffdef3";
+                title.style.textAlign = "center";
+                title.style.alignItems = "center";
+                title.style.maxWidth = "80%";
+                title.style.margin = "-10% 0% 0% 9%";
+                
+
+                div.append(poster, title);
+                container.append(div);
+
+                // div.onclick = function(){
+                //     getMovie(movie.Title);
+                // };
+            });
+        }  
+
+
+
+        // debouncing
+
+        var timerId;
+        // search movies
+        let movies_div = document.getElementById("movies");
+
+        document.getElementById("movie").addEventListener("input", display);
+
+        document.getElementById("container").addEventListener("click", displayNone);
+
+        function displayNone(){
+            movies_div.style.display = "none";
+        }
+    
+        function display(){
+            movies_div.style.display = "flex";
+            movies_div.style.flexDirection = "column";
+        }
+
+        async function searchMovies(movie_name){
+
+        try
+        {
+            let res = await fetch(`http://www.omdbapi.com/?apikey=a29288ed&s=${movie_name}&plot=short&r=json`);
+            let data = await res.json();
+            //console.log("data:", data);
+            return data;
+        }
+        catch(e)
+        {
+            console.log("e:", e);
+        }
+        }
+
+
+        function appendMovies(movies){
+            if(movies === undefined)
+            {
+                return false;
+            }
+
+            movies_div.innerHTML = null;
+            movies.forEach(function(movie){
+                let div = document.createElement('div');
+                let p = document.createElement('p');
+                let pos = document.createElement('img');
+
+                div.style.display = "flex";
+                div.style.height = "50%";
+                div.style.margin = "1%";
+                div.style.backgroundColor = "#ffdef3";
+                // div.style.backgroundColor = "blue";
+
+                pos.style.marginTop = "5%";
+                pos.style.height = "75%";
+                pos.style.width = "20%";
+                p.style.verticalAlign = "middle";
+                p.style.marginTop = "5%";
+
+                p.innerText = movie.Title;
+                pos.src = movie.Poster;
+
+                div.onclick = function(){
+                    getMovie(movie.Title);
+                };
+
+               div.append(pos, p);
+               movies_div.append(div);
+            });
+        }
+
+        async function main(){
+            let name = document.getElementById("movie").value;
+
+            //get search movies
+
+            if(name.length < 3)
+            {
+                return false;
+            }
+
+            let res = await searchMovies(name);
+            let movies_data = res.Search;
+            appendMovies(movies_data);
+            console.log("res:", res);
+        }
+
+        //debouncing
+
+        function debounce(func, delay){
+            //lets talk about A
+            //func = main()
+
+            if(timerId)
+            {
+                clearTimeout(timerId);
+            }
+
+            timerId = setTimeout(function(){
+
+                func();
+
+            },delay);
+
+        }
+
+    </script>
+
+
+
+<!-- /* p{
+    margin: 50% 0% 0% 40%;
+    color: blanchedalmond;
+    font-size: 200%;
+}
+p+p{
+    margin: 20% 40%;
+    font-size: 150%;
+} */
+/* body{
+    background-image: url(pexels-ron-lach-9807291.jpg);
+    background-size: 1370px 656px;
+    background-repeat: no-repeat;
+} */
+/* #display{
+    background-color: rgba(177, 133, 68, 0.5);
+    margin: 3% 10%;
+    width: 80%;
+    height: 20%;
+    display: flex;
+} */ -->
+</html>
