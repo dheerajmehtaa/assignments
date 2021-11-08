@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        #dishesDiv {
+            display: grid;
+            grid-template-columns: 21% 21% 21% 21%;
+            gap: 15px;
+            margin-left: 120px;;
+        }
+        #dishesDiv > div {
+            border: 0px solid black;
+            height: 350px;
+            max-height: 650px;
+            padding: 5px;
+        }
+        img {
+            width: 80%;
+            height: 45%;
+        }
+        #cartbtn {
+            margin: 15px;
+            width: 400px;
+            height: 80px;
+        }
+        h1{
+            margin-left: 45%;
+        }
+
+        </style>
+    </head>
+    <body>
+        <h1>MENU</h1>
+        <button onclick="goToCart()" id="cartbtn">Go toCart</button>
+        <div id="dishesDiv">
+
+        </div>
+
+        <script type="text/javascript">
+        var dish = [
+            {
+                name: "Idli",
+                image: "https://static.toiimg.com/thumb/53239358.cms?imgsize=176260&width=800&height=800",
+                price: 40,
+                desc: "Healthy South Indian dish",
+                time: "30 mins",
+            },
+            {
+                name: "Special Veg Curry",
+                image: "https://img.taste.com.au/kUVCKnrN/taste/2016/11/indian-style-vegetable-curry-59371-1.jpeg",
+                price: 400,
+                desc: "Chef Special Curry",
+                time: "50 mins",
+            },
+            {
+                name: "Dosa",
+                image: "https://static.toiimg.com/thumb/63841432.cms?width=1200&height=900",
+                price: 50,
+                desc: "Yummy South Indian dish",
+                time: "25 mins",
+            },
+            {
+                name: "Gobi Manchurian",
+                image: "https://media.vogue.in/wp-content/uploads/2020/11/Gobhi-Manchurian-recipe-chinese-starters-1920x1080.jpg",
+                price: 40,
+                desc: "A tasty Chinese dish.",
+                time: "45 mins",
+            },
+            {
+                name: "Veg Pulav",
+                image: "https://www.indianveggiedelight.com/wp-content/uploads/2017/07/veg-pulao-karnataka-style-featured.jpg",
+                price: 80,
+                desc: "Healthy South Indian dish",
+                time: "40 mins",
+            },
+            {
+                name: "Idli",
+                image: "https://static.toiimg.com/thumb/53239358.cms?imgsize=176260&width=800&height=800",
+                price: 40,
+                desc: "Healthy South Indian dish",
+                time: "30 mins",
+            },
+            {
+                name: "Special Veg Curry",
+                image: "https://img.taste.com.au/kUVCKnrN/taste/2016/11/indian-style-vegetable-curry-59371-1.jpeg",
+                price: 400,
+                desc: "Chef Special Curry",
+                time: "50 mins",
+            },
+            {
+                name: "Dosa",
+                image: "https://static.toiimg.com/thumb/63841432.cms?width=1200&height=900",
+                price: 50,
+                desc: "Yummy South Indian dish",
+                time: "25 mins",
+            },
+            {
+                name: "Gobi Manchurian",
+                image: "https://media.vogue.in/wp-content/uploads/2020/11/Gobhi-Manchurian-recipe-chinese-starters-1920x1080.jpg",
+                price: 40,
+                desc: "A tasty Chinese dish.",
+                time: "45 mins",
+            },
+            {
+                name: "Idli",
+                image: "https://static.toiimg.com/thumb/53239358.cms?imgsize=176260&width=800&height=800",
+                price: 40,
+                desc: "Healthy South Indian dish",
+                time: "30 mins",
+            },
+            {
+                name: "Special Veg Curry",
+                image: "https://img.taste.com.au/kUVCKnrN/taste/2016/11/indian-style-vegetable-curry-59371-1.jpeg",
+                price: 400,
+                desc: "Chef Special Curry",
+                time: "50 mins",
+            },
+            {
+                name: "Dosa",
+                image: "https://static.toiimg.com/thumb/63841432.cms?width=1200&height=900",
+                price: 50,
+                desc: "Yummy South Indian dish",
+                time: "25 mins",
+            },
+            {
+                name: "Gobi Manchurian",
+                image: "https://media.vogue.in/wp-content/uploads/2020/11/Gobhi-Manchurian-recipe-chinese-starters-1920x1080.jpg",
+                price: 40,
+                desc: "A tasty Chinese dish.",
+                time: "45 mins",
+            },
+            {
+                name: "Idli",
+                image: "https://static.toiimg.com/thumb/53239358.cms?imgsize=176260&width=800&height=800",
+                price: 40,
+                desc: "Healthy South Indian dish",
+                time: "30 mins",
+            },
+            {
+                name: "Special Veg Curry",
+                image: "https://img.taste.com.au/kUVCKnrN/taste/2016/11/indian-style-vegetable-curry-59371-1.jpeg",
+                price: 400,
+                desc: "Chef Special Curry",
+                time: "50 mins",
+            },
+            {
+                name: "Dosa",
+                image: "https://static.toiimg.com/thumb/63841432.cms?width=1200&height=900",
+                price: 50,
+                desc: "Yummy South Indian dish",
+                time: "25 mins",
+            },
+            {
+                name: "Gobi Manchurian",
+                image: "https://media.vogue.in/wp-content/uploads/2020/11/Gobhi-Manchurian-recipe-chinese-starters-1920x1080.jpg",
+                price: 40,
+                desc: "A tasty Chinese dish.",
+                time: "45 mins",
+            },
+            {
+                name: "Idli",
+                image: "https://static.toiimg.com/thumb/53239358.cms?imgsize=176260&width=800&height=800",
+                price: 40,
+                desc: "Healthy South Indian dish",
+                time: "30 mins",
+            },
+            {
+                name: "Special Veg Curry",
+                image: "https://img.taste.com.au/kUVCKnrN/taste/2016/11/indian-style-vegetable-curry-59371-1.jpeg",
+                price: 400,
+                desc: "Chef Special Curry",
+                time: "50 mins",
+            },
+            {
+                name: "Dosa",
+                image: "https://static.toiimg.com/thumb/63841432.cms?width=1200&height=900",
+                price: 50,
+                desc: "Yummy South Indian dish",
+                time: "25 mins",
+            },
+            {
+                name: "Gobi Manchurian",
+                image: "https://media.vogue.in/wp-content/uploads/2020/11/Gobhi-Manchurian-recipe-chinese-starters-1920x1080.jpg",
+                price: 40,
+                desc: "A tasty Chinese dish.",
+                time: "45 mins",
+            },
+            
+        ];
+        
+        localStorage.setItem('dishes', JSON.stringify(dish));
+        let dishes = JSON.parse(localStorage.getItem('dishes'));
+        dishes.forEach(function(element) {
+            let div = document.createElement('div');
+            let p1 = document.createElement('p');
+            p1.textContent = element.name;
+            let p2 = document.createElement('p');
+            p2.textContent = `Price: ${element.price}`;
+            let p3 = document.createElement('p');
+            p3.textContent = `Description: ${element.desc}`;
+            let p4 = document.createElement('p');
+            p4.textContent = `Time to Prepare ${element.time}`;
+            let img = document.createElement('img');
+            img.src = element.image;
+            let btn = document.createElement('button');
+            btn.textContent = "Add to Cart";
+            btn.onclick = function() {
+                addToCart(element);
+            }
+            div.append(img,p1, p2, p3, p4,  btn);
+            document.getElementById('dishesDiv').append(div);
+        })
+        function addToCart(e) {
+            let cartItems = localStorage.getItem('cart');
+            if(cartItems == null) {
+                cartItems = [];
+            } else {
+                cartItems = JSON.parse(cartItems);
+            }
+            cartItems.push(e);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+        }
+        function goToCart() {
+            window.location.href = 'cart.html';
+        }
+        </script>
+    </body>
+</html>
