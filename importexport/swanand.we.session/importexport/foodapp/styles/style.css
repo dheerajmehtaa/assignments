@@ -1,0 +1,87 @@
+     #logo{
+      color:white ;
+      font-size: 30px !important;
+      font-family: 'Pacifico', 
+      cursive !important; 
+      ;background-color: rgb(179, 46, 46)!important}
+      #navbar{display: flex; position: fixed;
+      top:0;left:0;right: 0;
+      width: 100%;
+      background-color: rgb(179, 46, 46);
+      text-align:
+      center; color: cadetblue; }
+
+      #navbar >a{
+      margin: auto;
+      font-family: 'Asap', sans-serif;
+      }
+      #navbar >a{
+      padding:10px
+      }
+
+
+      #navbar >a{
+      background-color: rgb(36, 35, 34); 
+      cursor: pointer;
+      text-decoration: none;
+      color: white;}
+
+
+
+
+
+
+      #bg{
+
+
+
+
+
+
+      margin-top: 150px;
+
+      background-size: cover;
+
+      background-repeat: no-repeat;
+
+      width: 650px ;
+      height: 650px;
+
+      margin: auto;
+
+
+
+
+
+
+      }
+
+
+
+
+      input{
+      padding:10px 50px;
+      background-color:
+      cadetblue; margin-left: -10px;
+      margin-top: 30px;
+      }
+      #search_div{ 
+      width:500px;
+      height: 500px;
+      margin: 200px 200px 200px 80px; 
+      border:0px solid rgb(255, 190, 24); 
+      text-align: center;
+      margin-top: 100px;
+      }
+
+
+
+      #search_div > div{
+        display: flex;
+        
+        margin-left: 100px;
+         margin-top: 50px; }
+
+
+
+

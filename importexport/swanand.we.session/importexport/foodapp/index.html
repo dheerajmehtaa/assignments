@@ -1,289 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Your Recipie</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap&family=Festive&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/style.css">
     <style>
-        #display{
-            display: grid;
-            grid-template-columns: repeat(3, 30%);
-            grid-gap: 20px;
-        }
+        body {
+            background-image: url('https://wallpaperaccess.com/full/767033.jpg');
+            background-size: cover;
 
-        #categories{
-            display: grid;
-            grid-template-columns: repeat(3, 30%);
-            grid-gap: 3%;
-        }
 
-        img{
-            width: 70%;
-            height: 80%;
-        }
 
-        button{
-            height: 20px;
-            width: 50px;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
         }
     </style>
 </head>
 
-    <body>
-        <input type="text" id="meal">
-        <button onclick="getData()">Enter</button>
+<body>
 
-        <div id="button"></div>
-        <div id="display"></div>
-        <div id="categories"></div>
-        <div id="recipe"></div>
+    <div id='navbar'>
+
+
+
+
+    </div>
+
+
+
+    <div id='bg'>
+
+
+
+
+
+        <div id='search_div'>
+
+            <div>
+                <div></div>
+
+                <div></div>
+            </div>
+
+            <input type='text' placeholder="Search" id='name' oninput="debun(main,1000)" onclick="tongue()">
+
+
+            <h2 id='headin'>Recipies</h2>
+
+
+        </div>
+
+        <div id='res_box'>
+
+        </div>
+
+
+
+      </div>
+
+
     </body>
 
 </html>
 
-<script>
-
-    //my landing page will have categories. you can click on a particular category and all the recipes from the categories will show up. 
-    //further if you click on a particular dish, the recipe will be displayed. My issue is some of the categories on the second page and
-    // the recipe page(third) are getting repeated.
-
-    let display = document.getElementById("display");
-    let parentCategories = document.getElementById("categories");
-    let btn = document.getElementById("button");
-    let recipe = document.getElementById("recipe");
-
-    var array = []; //adding all the objects received from the individual api calls. over to line no. 64.
 
 
-    async function getData(category){ //func call. over to line no. 151
-        
-        parentCategories.innerHTML = null;
 
-        // making individual api calls using the first letter url bcz it gets all the recipes starting with 
-        // that letter and im pushing it to the array
+<script type='module'>
 
-        //after this you should refer line no. 243 
+    import navbar from "foodapp/components/navbar.js";
 
-        let a = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=a`);
-        let aa = await a.json();
-        array.push(aa);
-
-        let b = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=b`);
-        let bb = await b.json();
-        array.push(bb);
-
-        let c = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=c`);
-        let cc = await c.json();
-        array.push(cc);
-
-        let d = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=d`);
-        let dd = await d.json();
-        array.push(dd);
-
-        let e = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=e`);
-        let ee = await e.json();
-        array.push(ee);
-
-        let f = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=f`);
-        let ff = await f.json();
-        array.push(ff);
-
-        let g = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=g`);
-        let gg = await g.json();
-        array.push(gg);
-
-        let h = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=h`);
-        let hh = await h.json();
-        array.push(hh);
-
-        let i = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=i`);
-        let ii = await i.json();
-        array.push(ii);
-
-        let j = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=j`);
-        let jj = await j.json();
-        array.push(jj);
-
-        let k = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=k`);
-        let kk = await k.json();
-        array.push(kk);
-
-        let l = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=l`);
-        let ll = await l.json();
-        array.push(ll);
-
-        let m = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=m`);
-        let mm = await m.json();
-        array.push(mm);
-
-        let n = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=n`);
-        let nn = await n.json();
-        array.push(nn);
-
-        let p = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=p`);
-        let pp = await p.json();
-        array.push(pp);
-
-        let r = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=r`);
-        let rr = await r.json();
-        array.push(rr);
-
-        let s = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=s`);
-        let ss = await s.json();
-        array.push(ss);
-
-        let t = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=t`);
-        let tt = await t.json();
-        array.push(tt);
-
-        let v = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=v`);
-        let vv = await v.json();
-        array.push(vv);
-
-        let w = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=w`);
-        let ww = await w.json();
-        array.push(ww);
-       
-        let y = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=y`);
-        let yy = await y.json();
-        array.push(yy);
-
-        console.log(array); //you can see the array of objects here
-
-        function showCat(){ //this function is displaying all the recipes 
-
-            recipe.innerHTML = null;
-            btn.innerHTML = null;
-
-            let div = document.createElement("div");
-            var buttonCat = document.createElement("button")
-
-            buttonCat.innerText = "Back";
-            buttonCat.onclick = () => {
-                getCategory();
-            }
-            div.append(buttonCat);
-            btn.append(div);
-
-            array.forEach(({ meals }) => {
-                console.log(meals); // you can see the objects here
-                meals.forEach(({strMealThumb, strMeal, strCategory}) => { //i feel theres some issue here, most of the recipes are getting displayed thrice
-                    //over to line no. 195
-                    if(strCategory == category)
-                    {
-                        let div = document.createElement("div");
-                        let title = document.createElement("p");
-                        let category = document.createElement("p");
-                        let img = document.createElement("img");
-
-                        img.src = strMealThumb;
-                        title.innerText = strMeal;
-                        category.innerText = strCategory;
-
-                        div.append(img, category, title);
-                        display.append(div);
-
-                        div.onclick = () => {
-                            showRecipe(strMeal);
-                        }
-                    }
-                });
-                
-            });
-        }
-
-        showCat();
-
-            function showRecipe(meal){ //once you click on a certain recipe, all the details will be displayed
-
-                display.innerHTML = null;
-                recipe.innerHTML = null;
-                
-                array.forEach(({ meals }) => {
-               
-                    meals.forEach(({ strMealThumb, strMeal, strCategory, strInstructions }) => { //for some recipes even this is getting displayed thrice
-
-                        if(strMeal == meal)
-                        {
-                            let div = document.createElement("div");
-                            let title = document.createElement("p");
-                            let category = document.createElement("p");
-                            let instructions = document.createElement("p");
-                            let img = document.createElement("img");
-
-                            img.src = strMealThumb;
-                            title.innerText = strMeal;
-                            category.innerText = strCategory;
-                            instructions.innerText = strInstructions
+    import {getData,append,appendreceipe} from "./scripts/showData.js"
 
 
-                            div.append(img, category, title, instructions);
-                            recipe.append(div);
-
-                            btn.innerHTML = null;
-                            let divbtn = document.createElement("div");
-                            let button = document.createElement("button")
-
-                            button.innerText = "Back";
-                            divbtn.append(button);
-                            btn.append(divbtn);
-
-
-                            button.onclick = () => {
-                                showCat();
-                            }
-
-                            
-                        }
-                    });
-                    
-                });
-            }
-       
-        }
-
-    //i am making a call to get the categories. over to line no. 258
-
-   async function getCategory(){
-
-        display.innerHTML = null;
-        btn.innerHTML = null;
-
-        let res = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
-        let data = await res.json();
-
-        showCategory(data.categories);
-    }
-
-    getCategory();
-
-    //here i am displaying the categories on the page  e.g. dessert, pasta, chicken, etc. over to line no. 279
-
-    async function showCategory(categories){
-
-        display.innerHTML = null;
-        recipe.innerHTML = null;
-
-        categories.forEach(({ strCategory, strCategoryThumb }) => {
-
-            let div = document.createElement("div");
-            let cat = document.createElement("p");
-            let catImg = document.createElement("img");
-
-            cat.innerText = strCategory;
-            catImg.src = strCategoryThumb;
-
-            div.append(cat, catImg);
-            parentCategories.append(div);
-
-            div.onclick = () => {
-                getData(strCategory); // once you click on a category, all the recipes from that categories will be displayed. over to line no. 56
-            };
-            
-        });
-
-    }
     
+
+    console.log(navbar)
+
+    var nav = document.getElementById('navbar')
+
+    nav.innerHTML = navbar()
+
+    var recipie_box = document.getElementById('res_box')
+
+  
+
+
+    window.tongue = () => {
+        recipie_box.style.height = '200px'
+    }
+
+    
+
+
+    window.main = async function () {
+
+        var recipie_box = document.getElementById('res_box')
+        name = document.getElementById('name').value
+
+        if (name.length < 3) { return false }
+
+
+        let x= await getData(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+
+        let t=x.meals
+       
+        appendreceipe(t,recipie_box)
+
+
+
+    }
+   
+ 
+
+
+    var timerId;
+
+
+
+
+    window.debun = function (func, delay) {
+
+
+        if (timerId) { clearTimeout(timerId) }
+
+
+        timerId = setTimeout(() => {
+
+            func()
+
+        }, delay)
+
+    }
+
 </script>

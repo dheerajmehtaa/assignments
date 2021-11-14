@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        body{background-color: rgb(1, 44, 37); color: white;}
+
+        #latest_box{display: grid; grid-template-columns: repeat(3,28%); grid-gap:5%; 
+            border:0px solid rgb(5, 4, 4);
+             margin: auto; 
+             padding-top: 70px; 
+             padding-left: 100px;
+             border-radius: 13px;
+             height: 4500px
+            }
+        #latest_box>div{border:3px solid rgb(88, 146, 131);
+            background-color: rgb(84, 142, 132);
+            padding:33px;
+            border-radius: 10px;
+            box-shadow:1px 1px 1px 1px rgb(140, 180, 173)
+        }
+        #latest_box>div>img{
+            width:200px
+        }
+        img{
+            margin-left: 30px;
+        }
+
+        h1{text-align: center; margin-top: 100px;
+        color: rgb(5, 46, 27)}
+        p{color: rgb(91, 93, 93);}
+    </style>
+</head>
+<body>
+
+    <div id='navbar'>
+
+    </div>
+
+<h1>Latest Receipies</h1>
+    <div id='latest_box'>
+
+    </div>
+    
+</body>
+
+
+</html>
+<script type="module">
+
+
+
+import navbar from "./components/navbar.js";
+
+
+var nav= document.getElementById('navbar')
+nav.innerHTML=navbar()
+
+import {getData,append,appendlatest} from "./scripts/showData.js";
+
+
+
+
+let latestmeal= await getData(`https://www.themealdb.com/api/json/v1/1/categories.php`);
+
+let z=latestmeal.categories
+
+console.log(z)
+
+let cont=document.getElementById('latest_box')
+appendlatest(z,cont)
+
+
+
+
+   
+
+
+
+</script>
