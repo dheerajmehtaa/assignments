@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movies</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    
+    
+    <style>
+
+      #login_div{
+        background-color:#131A27 ;
+         width:450px;
+         height: 500px;
+         position: fixed;
+         top:150px;
+         left:600px;
+         display: none;
+      }
+      
+
+
+      #cl_btn{
+        margin-left: 380px;
+        margin-top: 8px;
+        cursor: pointer;
+      }
+
+
+
+      #login_div>p{
+        margin-left: 50px;
+        margin-top: 50px;
+        cursor: pointer;
+      }
+
+      #fbem{
+        margin-left: 50px;
+        margin-top: 30px;
+        background-color:rgb(22,39,63) ;
+        border: 1px solid rgb(31,128,224);
+        padding:10px 50px;
+        border-radius: 5px;
+      }
+
+      #loginbtn{
+
+        margin-left: 50px;
+        margin-top: 10px;
+        background-color:rgb(22,39,63) ;
+        border: 1px solid rgb(31,128,224);
+        padding:10px 50px;
+        border-radius: 5px;
+
+
+      }
+
+      #login_div>div{
+        margin-left: 50px;
+        margin-top: 30px;
+      }
+
+
+      #login_div>div>span{padding:8px;
+        border-right:1px solid rgb(31,128,224);
+        cursor: pointer;
+      }
+
+      #login_div>div>input{background-color:rgb(22,39,63) ; padding:6px 50px;
+      
+      border-top: 1px solid rgb(22,39,63);
+      
+      }
+
+     #or{
+      margin-left: 100px;
+      margin-top: 5px;
+     }
+       
+      
+     body{background-color: #0C111B; color: white;}
+
+     
+       #nav-div{
+           display:flex;
+           background-color: #131A27;
+           width:100%;
+           height: 80px;
+           position: fixed;
+           top:0;
+           left:0;
+           right:0;
+       }
+
+  #nav-left-item{
+      color: white;
+      font-size: 22px;
+      
+
+      margin-left: 80px;
+      margin-top: 15px;
+      
+      
+  }
+  #nav-left-item>span{padding-left: 20px; cursor: pointer;}
+
+ #search-icon{margin: -25px;}
+  #nav-right-item{
+    position: absolute;
+      margin-top: 20px;
+     right: 30px;
+     
+     color: white;
+      
+
+  }
+
+  #nav-right-item>button{margin-left: 40px;margin-right: 10px; background-color: #1F80E0; color: white; padding:3px 8px ; border-radius: 5px;}
+
+  #nav-right-item>input{width:250px; padding:5px; background-color: #131A27; color: white; font-size: 20px;}
+
+  .box{width:350px; height:300px;  color: white; padding:20px; background-color: #0C111B;; overflow-y: scroll;
+     position: fixed;
+     top:80px;
+      right:150px;
+      cursor: pointer;
+  
+  }
+
+  #nav-right-item>span{cursor: pointer;}
+  #movies >div{display: flex; background-color: #131A27; margin:5px; border-radius: 5px ;}
+
+  
+  #movies >div >div >img{width:180px; height:80px ; border-radius: 5px;}
+
+  #movies >div >div{padding:3px; font-size: 14px;}
+  .slides{ height:400px;  width:1440px;margin: auto;margin-top: 80px;border-radius: 20px;
+      }
+
+      .slides >img{ height:400px;  width:1440px; border-radius: 20px; margin: auto; }
+
+      #popular-div{display:grid; grid-template-columns: 11% 11% 11% 11% 11% 11% 11%  11%;grid-gap:20px;
+        
+         width:1500px; margin-top: 25px; padding-left: 23px;}
+        #popular-div>div{cursor: pointer;}
+
+        #popular-div>div >img{width:150px; height: 240px; border-radius: 5px; margin: auto;}
+
+
+  
+    </style>
+</head>
+<body>
+  
+ <div>  
+
+<div id="nav-div">
+
+    <div id="nav-left-item">
+
+   <i class="fas fa-bars" style="color: white;"></i>
+   <span> <img src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg"></span>
+
+
+   <span>TV</span>
+   <span>Movies</span>
+   <span>Sports</span>
+   <span>Disney+</span>
+
+   </div>
+
+ <div id="nav-right-item">
+<input type="text" placeholder="Search" id="movie"  oninput="debounce(main,1000)" onclick="appeardiv()">
+<i class="fas fa-search" id="search-icon" style="color: white;" ></i>
+ 
+<button>Subscribe</button>
+
+<span onclick="appearbox()"  id='profbtn'>LOGIN</span>
+<span id='userprofile'></span>
+ 
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div id="movies" class="box">
+
+
+
+
+</div>
+
+
+
+
+
+<div class="slides" id="slider">
+
+<!-- <img  src="https://i.ytimg.com/vi/FZ2zhfp43h8/maxresdefault.jpg"> -->
+
+
+
+</div>
+
+
+<h2 id="popular-heading"> Popular Movies</h2>
+
+<div id="popular-div">
+
+
+</div>
+
+
+
+
+</div> 
+
+
+   <div id="login_div">
+
+   
+    <button type="button" id="cl_btn" class="btn-close btn-close-white" aria-label="Close" style="margin-right: 20px;" onclick="closebox()"></button>
+   
+
+
+     <p>Are your a New User</p>
+  
+
+     <a href='register.html'><button id="fbem"> Get Register</button></a>
+              <p id="or">Already Registered?</p>
+
+      <div>
+
+      <input type="text" placeholder="Username"  id='username'> <br><br>
+      <input type="text" placeholder="Password"  id='password'> 
+
+
+      <button id='loginbtn' onclick="login()">Login</button>
+
+     </div>
+
+
+    
+
+
+
+   </div>
+
+
+
+
+<script>
+
+ 
+async function login(){
+  username=document.getElementById('username').value
+
+  // document.getElementById('userprofile').textContent=username
+
+ 
+
+user={
+  username:document.getElementById('username').value,
+password:document.getElementById('password').value
+
+}
+
+
+
+data_to_send=JSON.stringify(user)
+
+    
+try{
+response=await fetch('https://masai-api-mocker.herokuapp.com/auth/login',{
+
+ method:"POST",
+ body:data_to_send,
+ headers:{
+     'Content-Type':'application/json'
+ }
+  
+
+
+ })
+
+ data=await response.json()
+
+ fetchprofile(username,data.token)
+ console.log(username,data.token)
+ document.getElementById('profbtn').innerText='LogedIn' + " " +username
+
+}
+
+catch(e){
+
+ console.log(e)
+
+}
+
+
+
+
+}
+
+
+
+async function fetchprofile(username,token){
+
+try{
+
+ response=await  fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`,{
+    headers:{
+
+        "Content-Type":"application/json",
+        'Authorization': `Bearer ${token}`,
+    },
+
+   })
+
+prof=await response.json()
+
+
+  console.log(prof)
+
+  }
+
+  catch(e){console.log(e)}
+
+}
+
+
+
+
+
+
+slideimage=[
+  "https://1.bp.blogspot.com/-KaXzMMu8Ofo/YG3HROGSXPI/AAAAAAAAEcc/dZQhk3fc9JAWH-9jFNVxGHf0uyJUiXmAACLcBGAsYHQ/w1200-h630-p-k-no-nu/result%2B%25288%2529.jpg",
+  
+  "https://i.ytimg.com/vi/FZ2zhfp43h8/maxresdefault.jpg",
+  "https://www.newsbricks.com/root_upld/general-news/2021/07/99820/org_52042202107211654.jpg",
+
+  "https://i.pinimg.com/736x/ec/c5/e4/ecc5e4ca4134e72a194a20607a3179b5.jpg",
+  "https://images.indulgexpress.com/uploads/user/imagelibrary/2019/10/21/original/TanhajiTheUnsungWarriorposter.JPG",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVKIbevCdq6sSNxWlyzyGYlKfaMh0rSKHbbg&usqp=CAU"
+
+]
+
+
+ 
+
+
+ function slideplay() {
+  slider=document.getElementById("slider")
+  img=document.createElement('img')
+  img.src=slideimage[0]
+  slider.append(img)
+
+  var count = 0;
+  count++
+  setInterval(() => {
+
+    slider.innerHTML=null
+    if (count == slideimage.length) { count = 0 }
+    
+  img=document.createElement('img')
+  img.src=slideimage[count]
+  slider.append(img)
+
+    count++
+  }, 2000);
+
+  
+
+}
+
+slideplay()
+
+
+
+
+let movies_div=document.getElementById("movies");
+
+
+async function searchMovies(movie_name){  
+  
+  
+  try {
+    
+   let res = await fetch(`https://www.omdbapi.com/?apikey=d806bd70&s=${movie_name}`);
+   let data = await res.json()
+
+   return data
+
+  
+ 
+    
+  } catch (e) {
+    console.log(e)
+  }
+ 
+
+ 
+
+}
+
+
+var timerId;
+
+function appendMovies(movies){
+    
+
+if(movies==undefined){return false}
+    
+    
+
+movies_div.innerHTML=null
+
+movies.forEach(movie => {
+    
+    if(movie.Title==undefined){return false}
+
+  let div=document.createElement('div')
+
+  let div1=document.createElement('div')
+  let img=document.createElement('img')
+  img.src=movie.Poster
+  div1.append(img)
+
+  let div2=document.createElement('div')
+
+  let p=document.createElement('p')
+  p.innerHTML=movie.Title
+  div2.append(p)
+
+  div.append(div1,div2)
+
+  div.onclick=function (){
+    single_movie(movie)
+  }
+
+  movies_div.append(div)
+  
+});
+
+
+
+}
+
+  
+async function main(){
+
+  let name=document.getElementById("movie").value
+
+  if(name.length<3){return false;}
+  
+
+ let res = await searchMovies(name)
+ let movies_data=res.Search
+  appendMovies(movies_data)
+
+
+}
+
+function debounce(func,delay){
+if(timerId){
+  clearTimeout(timerId);
+}
+
+timerId=setTimeout(() => {
+
+  func();
+
+  
+}, delay);
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+movies_div.style.display="none"
+
+
+function appeardiv(){
+
+  movies_div.style.display="block"
+
+}
+
+
+
+
+function single_movie(movie){
+
+ window.location.href="singlepage.html"
+ 
+
+ localStorage.setItem('s_p',JSON.stringify(movie))
+
+   console.log(movie)
+
+  
+
+}
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function getpopular(){
+
+  
+  try{
+        let res=await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=7d7a9a6c33a69866ca2616dbfe472ef9`)
+        let data = await res.json();
+       console.log(data)
+       appendpopular(data.results)
+
+
+    }
+    catch(e){
+        console.log(`Error:${e}`)
+    }
+
+
+}
+
+getpopular()
+
+
+pupular_div=document.getElementById("popular-div")
+
+
+function appendpopular(items){
+
+
+items.forEach(item=>{
+
+  div=document.createElement('div')
+
+
+img=document.createElement('img')
+img.src=`https://image.tmdb.org/t/p/w500/${item.poster_path}`
+
+p=document.createElement('p')
+p.innerHTML=item.title
+
+div.append(img,p)
+
+
+div.onclick=function (){
+  show_single_popular(item)
+}
+
+pupular_div.append(div)
+
+
+
+})
+  
+
+
+
+}
+
+function show_single_popular(item){
+  window.location.href="single.html"
+
+
+ localStorage.setItem('s_p',JSON.stringify(item))
+
+
+  console.log(item)
+}
+
+
+
+
+
+
+
+
+
+function closebox(){
+  document.getElementById("login_div").style.display='none'
+
+}
+
+
+function appearbox(){
+
+  document.getElementById("login_div").style.display='block'
+
+}
+
+
+
+
+
+</script>
+
+
+
+    
+</body>
+</html>
