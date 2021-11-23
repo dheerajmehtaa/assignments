@@ -1,0 +1,689 @@
+Last login: Tue Nov 23 13:28:35 on console
+dheerajmehta@Dheerajs-MacBook-Air ~ % mongo
+zsh: command not found: mongo
+dheerajmehta@Dheerajs-MacBook-Air ~ % mongod
+zsh: command not found: mongod
+dheerajmehta@Dheerajs-MacBook-Air ~ % mongodb
+zsh: command not found: mongodb
+dheerajmehta@Dheerajs-MacBook-Air ~ % mongod
+zsh: command not found: mongod
+dheerajmehta@Dheerajs-MacBook-Air ~ % brew
+zsh: command not found: brew
+dheerajmehta@Dheerajs-MacBook-Air ~ % mongod --dbpath /srv/mongodb/
+zsh: command not found: mongod
+dheerajmehta@Dheerajs-MacBook-Air ~ % brew
+zsh: command not found: brew
+dheerajmehta@Dheerajs-MacBook-Air ~ % brew --version
+zsh: command not found: brew
+dheerajmehta@Dheerajs-MacBook-Air ~ % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+==> Checking for `sudo` access (which may request your password)...
+Password:
+==> This script will install:
+/opt/homebrew/bin/brew
+/opt/homebrew/share/doc/homebrew
+/opt/homebrew/share/man/man1/brew.1
+/opt/homebrew/share/zsh/site-functions/_brew
+/opt/homebrew/etc/bash_completion.d/brew
+/opt/homebrew
+
+Press RETURN to continue or any other key to abort:
+==> /usr/bin/sudo /usr/sbin/chown -R dheerajmehta:admin /opt/homebrew
+
+==> Downloading and installing Homebrew...
+
+remote: Enumerating objects: 69, done.
+remote: Counting objects: 100% (69/69), done.
+remote: Compressing objects: 100% (36/36), done.
+remote: Total 69 (delta 40), reused 46 (delta 29), pack-reused 0
+Unpacking objects: 100% (69/69), done.
+From https://github.com/Homebrew/brew
+   354718c40..1564d7686  master     -> origin/master
+HEAD is now at 1564d7686 Merge pull request #12468 from Homebrew/update-man-completions
+Updated 2 taps (homebrew/core and homebrew/services).
+Warning: /opt/homebrew/bin is not in your PATH.
+  Instructions on how to configure your shell for Homebrew
+  can be found in the 'Next steps' section below.
+==> Installation successful!
+
+==> Homebrew has enabled anonymous aggregate formulae and cask analytics.
+Read the analytics documentation (and how to opt-out) here:
+  https://docs.brew.sh/Analytics
+No analytics data has been sent yet (nor will any be during this install run).
+
+==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+
+==> Next steps:
+- Run these two commands in your terminal to add Homebrew to your PATH:
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/dheerajmehta/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+- Run brew help to get started
+- Further documentation:
+    https://docs.brew.sh
+
+dheerajmehta@Dheerajs-MacBook-Air ~ % 
+dheerajmehta@Dheerajs-MacBook-Air ~ % 
+dheerajmehta@Dheerajs-MacBook-Air ~ % brew --version
+zsh: command not found: brew
+dheerajmehta@Dheerajs-MacBook-Air ~ % $(/opt/homebrew/bin/brew shellenv)"
+dquote> 
+dquote> 
+dheerajmehta@Dheerajs-MacBook-Air ~ % eval "$(/opt/homebrew/bin/brew shellenv)"
+dheerajmehta@Dheerajs-MacBook-Air ~ % /Users/dheerajmehta/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+zsh: no such file or directory: /Users/dheerajmehta/.zprofile
+dheerajmehta@Dheerajs-MacBook-Air ~ %  eval "$(/opt/homebrew/bin/brew shellenv)"
+dheerajmehta@Dheerajs-MacBook-Air ~ % /Users/dheerajmehta/.zprofile
+zsh: no such file or directory: /Users/dheerajmehta/.zprofile
+dheerajmehta@Dheerajs-MacBook-Air ~ %   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"'
+eval "$(/opt/homebrew/bin/brew shellenv)"
+dheerajmehta@Dheerajs-MacBook-Air ~ % /Users/dheerajmehta/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+zsh: no such file or directory: /Users/dheerajmehta/.zprofile
+dheerajmehta@Dheerajs-MacBook-Air ~ % brew help
+Example usage:
+  brew search TEXT|/REGEX/
+  brew info [FORMULA|CASK...]
+  brew install FORMULA|CASK...
+  brew update
+  brew upgrade [FORMULA|CASK...]
+  brew uninstall FORMULA|CASK...
+  brew list [FORMULA|CASK...]
+
+Troubleshooting:
+  brew config
+  brew doctor
+  brew install --verbose --debug FORMULA|CASK
+
+Contributing:
+  brew create URL [--no-fetch]
+  brew edit [FORMULA|CASK...]
+
+Further help:
+  brew commands
+  brew help [COMMAND]
+  man brew
+  https://docs.brew.sh
+dheerajmehta@Dheerajs-MacBook-Air ~ % brew --version
+Homebrew 3.3.5
+Homebrew/homebrew-core (git revision 65c1b0034f9; last commit 2021-11-23)
+dheerajmehta@Dheerajs-MacBook-Air ~ % mongo
+MongoDB shell version v5.0.3
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("0d6cc426-e13c-4fbe-a99c-500480bdfcc3") }
+MongoDB server version: 5.0.3
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting: 
+        2021-11-23T13:28:43.915+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> 
+> 
+> db
+test
+> cd
+[native code]
+> db.users
+test.users
+> test.users
+uncaught exception: ReferenceError: test is not defined :
+@(shell):1:1
+> db.test.users
+test.test.users
+> db.users.find(
+... 
+... 
+> ps -a
+uncaught exception: ReferenceError: ps is not defined :
+@(shell):1:1
+> db
+test
+> db.runcommand
+test.runcommand
+> mongo
+uncaught exception: ReferenceError: mongo is not defined :
+@(shell):1:1
+> 
+> db
+test
+> dbs
+uncaught exception: ReferenceError: dbs is not defined :
+@(shell):1:1
+> showdbs
+uncaught exception: ReferenceError: showdbs is not defined :
+@(shell):1:1
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use users
+switched to db users
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> db.user.insert({item:"card", qty:15)
+... 
+... 
+> db.user.insert({item:"card", qty:15})
+WriteResult({ "nInserted" : 1 })
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+users   0.000GB
+> show collection
+uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show collections
+user
+> db.user.find({})
+{ "_id" : ObjectId("619d01cedbc4575eb0956449"), "item" : "card", "qty" : 15 }
+> mongod
+uncaught exception: ReferenceError: mongod is not defined :
+@(shell):1:1
+> mongo
+uncaught exception: ReferenceError: mongo is not defined :
+@(shell):1:1
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+users   0.000GB
+> db.user.find({})
+{ "_id" : ObjectId("619d01cedbc4575eb0956449"), "item" : "card", "qty" : 15 }
+> db.users
+users.users
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+users   0.000GB
+> 
+> show collections
+movies
+user
+> db.movies
+users.movies
+> db.movies({})
+uncaught exception: TypeError: db.movies is not a function :
+@(shell):1:1
+> db.movies.find({})
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e89"), "Movie_name" : "Booty Call", "Movie_genre" : "Comedy|Romance", "Year" : 2012, "budget" : 110447 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e8a"), "Movie_name" : "Spy Hard", "Movie_genre" : "Comedy", "Year" : 2004, "budget" : 189952 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e8b"), "Movie_name" : "State of Siege (État de siège)", "Movie_genre" : "Drama|Thriller", "Year" : 2011, "budget" : 144180 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e8c"), "Movie_name" : "Good Morning (Ohayô)", "Movie_genre" : "Comedy", "Year" : 2009, "budget" : 184233 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e8d"), "Movie_name" : "Howling IV: The Original Nightmare", "Movie_genre" : "Horror", "Year" : 2008, "budget" : 140755 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e8e"), "Movie_name" : "Underworld", "Movie_genre" : "Action|Fantasy|Horror", "Year" : 2001, "budget" : 142917 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e8f"), "Movie_name" : "Quills", "Movie_genre" : "Drama|Romance", "Year" : 2000, "budget" : 174041 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e90"), "Movie_name" : "Thick as Thieves (a.k.a. Code, The)", "Movie_genre" : "Crime", "Year" : 2010, "budget" : 126220 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e91"), "Movie_name" : "The Golden Eye", "Movie_genre" : "Crime|Mystery|Thriller", "Year" : 1993, "budget" : 181470 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e92"), "Movie_name" : "Loose Cannons (Mine vaganti)", "Movie_genre" : "Comedy|Drama", "Year" : 1990, "budget" : 128204 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e93"), "Movie_name" : "Rawhead Rex", "Movie_genre" : "Horror|Thriller", "Year" : 1994, "budget" : 103324 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e94"), "Movie_name" : "Popular Music (Populärmusik från Vittula)", "Movie_genre" : "Comedy|Drama", "Year" : 1994, "budget" : 170046 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e95"), "Movie_name" : "Big Lift, The", "Movie_genre" : "Drama|War", "Year" : 2008, "budget" : 105531 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e96"), "Movie_name" : "Kajaki", "Movie_genre" : "Adventure|Drama|War", "Year" : 2005, "budget" : 172891 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e97"), "Movie_name" : "Gridiron Gang", "Movie_genre" : "Drama", "Year" : 1997, "budget" : 130476 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e98"), "Movie_name" : "Ghoulies III: Ghoulies Go to College", "Movie_genre" : "Comedy|Horror", "Year" : 2005, "budget" : 147207 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e99"), "Movie_name" : "2010: Moby Dick", "Movie_genre" : "Action|Adventure|Thriller", "Year" : 2003, "budget" : 173483 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e9a"), "Movie_name" : "The Puzzle", "Movie_genre" : "Drama", "Year" : 2004, "budget" : 176967 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e9b"), "Movie_name" : "The Batman vs. Dracula", "Movie_genre" : "Action|Animation|Horror|Thriller", "Year" : 2008, "budget" : 135282 }
+{ "_id" : ObjectId("619d0d128ad8dd9a40644e9c"), "Movie_name" : "Touch the Top of the World", "Movie_genre" : "Drama", "Year" : 1996, "budget" : 161533 }
+Type "it" for more
+> db.movies.find({Movie_name:{$eq:"Booty Call"}}).pretty()
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e89"),
+	"Movie_name" : "Booty Call",
+	"Movie_genre" : "Comedy|Romance",
+	"Year" : 2012,
+	"budget" : 110447
+}
+> db.movies.find({Movie_name:{$ne:"Booty Call"}}).pretty()
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8a"),
+	"Movie_name" : "Spy Hard",
+	"Movie_genre" : "Comedy",
+	"Year" : 2004,
+	"budget" : 189952
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8b"),
+	"Movie_name" : "State of Siege (État de siège)",
+	"Movie_genre" : "Drama|Thriller",
+	"Year" : 2011,
+	"budget" : 144180
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8c"),
+	"Movie_name" : "Good Morning (Ohayô)",
+	"Movie_genre" : "Comedy",
+	"Year" : 2009,
+	"budget" : 184233
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8d"),
+	"Movie_name" : "Howling IV: The Original Nightmare",
+	"Movie_genre" : "Horror",
+	"Year" : 2008,
+	"budget" : 140755
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8e"),
+	"Movie_name" : "Underworld",
+	"Movie_genre" : "Action|Fantasy|Horror",
+	"Year" : 2001,
+	"budget" : 142917
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8f"),
+	"Movie_name" : "Quills",
+	"Movie_genre" : "Drama|Romance",
+	"Year" : 2000,
+	"budget" : 174041
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e90"),
+	"Movie_name" : "Thick as Thieves (a.k.a. Code, The)",
+	"Movie_genre" : "Crime",
+	"Year" : 2010,
+	"budget" : 126220
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e91"),
+	"Movie_name" : "The Golden Eye",
+	"Movie_genre" : "Crime|Mystery|Thriller",
+	"Year" : 1993,
+	"budget" : 181470
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e92"),
+	"Movie_name" : "Loose Cannons (Mine vaganti)",
+	"Movie_genre" : "Comedy|Drama",
+	"Year" : 1990,
+	"budget" : 128204
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e93"),
+	"Movie_name" : "Rawhead Rex",
+	"Movie_genre" : "Horror|Thriller",
+	"Year" : 1994,
+	"budget" : 103324
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e94"),
+	"Movie_name" : "Popular Music (Populärmusik från Vittula)",
+	"Movie_genre" : "Comedy|Drama",
+	"Year" : 1994,
+	"budget" : 170046
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e95"),
+	"Movie_name" : "Big Lift, The",
+	"Movie_genre" : "Drama|War",
+	"Year" : 2008,
+	"budget" : 105531
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e96"),
+	"Movie_name" : "Kajaki",
+	"Movie_genre" : "Adventure|Drama|War",
+	"Year" : 2005,
+	"budget" : 172891
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e97"),
+	"Movie_name" : "Gridiron Gang",
+	"Movie_genre" : "Drama",
+	"Year" : 1997,
+	"budget" : 130476
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e98"),
+	"Movie_name" : "Ghoulies III: Ghoulies Go to College",
+	"Movie_genre" : "Comedy|Horror",
+	"Year" : 2005,
+	"budget" : 147207
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e99"),
+	"Movie_name" : "2010: Moby Dick",
+	"Movie_genre" : "Action|Adventure|Thriller",
+	"Year" : 2003,
+	"budget" : 173483
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9a"),
+	"Movie_name" : "The Puzzle",
+	"Movie_genre" : "Drama",
+	"Year" : 2004,
+	"budget" : 176967
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9b"),
+	"Movie_name" : "The Batman vs. Dracula",
+	"Movie_genre" : "Action|Animation|Horror|Thriller",
+	"Year" : 2008,
+	"budget" : 135282
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9c"),
+	"Movie_name" : "Touch the Top of the World",
+	"Movie_genre" : "Drama",
+	"Year" : 1996,
+	"budget" : 161533
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9d"),
+	"Movie_name" : "Alexandra's Project",
+	"Movie_genre" : "Drama|Thriller",
+	"Year" : 1994,
+	"budget" : 165983
+}
+Type "it" for more
+> db.movies.find({Year:{$gt:"170000"}}).pretty()
+> db.movies.find({budget:{$gt:"170000"}}).pretty()
+> db.movies.find({Year:{$gt:"170000"}}).pretty()
+> db.movies.find({budget:{$gt:170000}}).pretty()
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8a"),
+	"Movie_name" : "Spy Hard",
+	"Movie_genre" : "Comedy",
+	"Year" : 2004,
+	"budget" : 189952
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8c"),
+	"Movie_name" : "Good Morning (Ohayô)",
+	"Movie_genre" : "Comedy",
+	"Year" : 2009,
+	"budget" : 184233
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8f"),
+	"Movie_name" : "Quills",
+	"Movie_genre" : "Drama|Romance",
+	"Year" : 2000,
+	"budget" : 174041
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e91"),
+	"Movie_name" : "The Golden Eye",
+	"Movie_genre" : "Crime|Mystery|Thriller",
+	"Year" : 1993,
+	"budget" : 181470
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e94"),
+	"Movie_name" : "Popular Music (Populärmusik från Vittula)",
+	"Movie_genre" : "Comedy|Drama",
+	"Year" : 1994,
+	"budget" : 170046
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e96"),
+	"Movie_name" : "Kajaki",
+	"Movie_genre" : "Adventure|Drama|War",
+	"Year" : 2005,
+	"budget" : 172891
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e99"),
+	"Movie_name" : "2010: Moby Dick",
+	"Movie_genre" : "Action|Adventure|Thriller",
+	"Year" : 2003,
+	"budget" : 173483
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9a"),
+	"Movie_name" : "The Puzzle",
+	"Movie_genre" : "Drama",
+	"Year" : 2004,
+	"budget" : 176967
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9e"),
+	"Movie_name" : "Into the Sun",
+	"Movie_genre" : "Action|Adventure|Thriller",
+	"Year" : 1993,
+	"budget" : 184644
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9f"),
+	"Movie_name" : "Event Horizon",
+	"Movie_genre" : "Horror|Sci-Fi|Thriller",
+	"Year" : 2001,
+	"budget" : 194697
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea0"),
+	"Movie_name" : "Crime Zone",
+	"Movie_genre" : "Action|Film-Noir|Sci-Fi",
+	"Year" : 2001,
+	"budget" : 194753
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea1"),
+	"Movie_name" : "Familia",
+	"Movie_genre" : "Comedy",
+	"Year" : 1999,
+	"budget" : 171310
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea3"),
+	"Movie_name" : "For Love of Ivy",
+	"Movie_genre" : "Comedy|Drama|Romance",
+	"Year" : 2002,
+	"budget" : 197963
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644eaa"),
+	"Movie_name" : "Prelude to a Kiss",
+	"Movie_genre" : "Comedy|Drama|Romance",
+	"Year" : 2008,
+	"budget" : 171676
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644eb0"),
+	"Movie_name" : "Tentacles (Tentacoli)",
+	"Movie_genre" : "Horror|Sci-Fi|Thriller",
+	"Year" : 2005,
+	"budget" : 190500
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644eb2"),
+	"Movie_name" : "Uwasa No Onna (The Woman in the Rumor) (Her Mother's Profession)",
+	"Movie_genre" : "Drama|Romance",
+	"Year" : 2004,
+	"budget" : 197992
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ec3"),
+	"Movie_name" : "Casanova",
+	"Movie_genre" : "Comedy|Drama|Romance",
+	"Year" : 2005,
+	"budget" : 191236
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ec6"),
+	"Movie_name" : "Babes in Toyland",
+	"Movie_genre" : "Children|Fantasy|Musical",
+	"Year" : 2002,
+	"budget" : 199821
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ec8"),
+	"Movie_name" : "Human Experience, The",
+	"Movie_genre" : "Documentary",
+	"Year" : 1993,
+	"budget" : 170917
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644eca"),
+	"Movie_name" : "Stop-Loss",
+	"Movie_genre" : "Drama|War",
+	"Year" : 2006,
+	"budget" : 187888
+}
+Type "it" for more
+> db.movies.find({budget:{$lt:170000}}).pretty()
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e89"),
+	"Movie_name" : "Booty Call",
+	"Movie_genre" : "Comedy|Romance",
+	"Year" : 2012,
+	"budget" : 110447
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8b"),
+	"Movie_name" : "State of Siege (État de siège)",
+	"Movie_genre" : "Drama|Thriller",
+	"Year" : 2011,
+	"budget" : 144180
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8d"),
+	"Movie_name" : "Howling IV: The Original Nightmare",
+	"Movie_genre" : "Horror",
+	"Year" : 2008,
+	"budget" : 140755
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e8e"),
+	"Movie_name" : "Underworld",
+	"Movie_genre" : "Action|Fantasy|Horror",
+	"Year" : 2001,
+	"budget" : 142917
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e90"),
+	"Movie_name" : "Thick as Thieves (a.k.a. Code, The)",
+	"Movie_genre" : "Crime",
+	"Year" : 2010,
+	"budget" : 126220
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e92"),
+	"Movie_name" : "Loose Cannons (Mine vaganti)",
+	"Movie_genre" : "Comedy|Drama",
+	"Year" : 1990,
+	"budget" : 128204
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e93"),
+	"Movie_name" : "Rawhead Rex",
+	"Movie_genre" : "Horror|Thriller",
+	"Year" : 1994,
+	"budget" : 103324
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e95"),
+	"Movie_name" : "Big Lift, The",
+	"Movie_genre" : "Drama|War",
+	"Year" : 2008,
+	"budget" : 105531
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e97"),
+	"Movie_name" : "Gridiron Gang",
+	"Movie_genre" : "Drama",
+	"Year" : 1997,
+	"budget" : 130476
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e98"),
+	"Movie_name" : "Ghoulies III: Ghoulies Go to College",
+	"Movie_genre" : "Comedy|Horror",
+	"Year" : 2005,
+	"budget" : 147207
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9b"),
+	"Movie_name" : "The Batman vs. Dracula",
+	"Movie_genre" : "Action|Animation|Horror|Thriller",
+	"Year" : 2008,
+	"budget" : 135282
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9c"),
+	"Movie_name" : "Touch the Top of the World",
+	"Movie_genre" : "Drama",
+	"Year" : 1996,
+	"budget" : 161533
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644e9d"),
+	"Movie_name" : "Alexandra's Project",
+	"Movie_genre" : "Drama|Thriller",
+	"Year" : 1994,
+	"budget" : 165983
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea2"),
+	"Movie_name" : "Almost Famous",
+	"Movie_genre" : "Drama",
+	"Year" : 1985,
+	"budget" : 99369
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea4"),
+	"Movie_name" : "Naked Prey, The",
+	"Movie_genre" : "Adventure",
+	"Year" : 1989,
+	"budget" : 130448
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea5"),
+	"Movie_name" : "Best of the Badmen",
+	"Movie_genre" : "Western",
+	"Year" : 2008,
+	"budget" : 97040
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea6"),
+	"Movie_name" : "Cyclomania",
+	"Movie_genre" : "Drama|Romance",
+	"Year" : 2006,
+	"budget" : 141387
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea7"),
+	"Movie_name" : "Warrior of the Lost World",
+	"Movie_genre" : "Action|Sci-Fi",
+	"Year" : 2011,
+	"budget" : 135533
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea8"),
+	"Movie_name" : "Trapped in the Closet: Chapters 1-12",
+	"Movie_genre" : "Drama|Musical",
+	"Year" : 1991,
+	"budget" : 133125
+}
+{
+	"_id" : ObjectId("619d0d128ad8dd9a40644ea9"),
+	"Movie_name" : "Instinct",
+	"Movie_genre" : "Drama|Thriller",
+	"Year" : 1997,
+	"budget" : 105081
+}
+Type "it" for more
