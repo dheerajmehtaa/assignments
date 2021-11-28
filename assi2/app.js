@@ -3,13 +3,8 @@ const express = require("express")
 
 const app = express()
 
+const dataa = require("./books.json");
 app.use(express.json());
-const books = require("./books.json")
-
-const dataa = {
-    api_requested_by:"Your name",
-    books:  books
-}
 
 const logger = (name) => {
    
