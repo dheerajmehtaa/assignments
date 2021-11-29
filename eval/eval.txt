@@ -1,4 +1,4 @@
- db.data.find().pretty().sort({"rating":-1})
+  db.data.find().pretty().sort({"rating":-1})
 
   db.data.find({"accept_notice_period":"T" }).pretty()
 
