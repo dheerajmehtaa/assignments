@@ -1,35 +1,8 @@
-const express = require('express');
-const app = express();
-const connect = require('./configs/db');
-const userController = require('./controllers/user.controller');
-const postController = require('./controllers/post.controller');
-const { register, login } = require('./controllers/auth.controller');
-const { body } = require('express-validator');
+const app = require('./index');
 
-app.use(express.json());
+const connect =  require('./configs/db');
 
-app.use('/register',
-    body('name').notEmpty().withMessage('Name is required'),
-    body('email').isEmail().withMessage('Proper email is required'),
-    body('password').notEmpty().withMessage('Password is required'),
-    register);
-
-app.use('/login', body('email').isEmail().withMessage('Proper email is required'),
-    body('password').notEmpty().withMessage('Password is required'),
-    login);
-
-
-app.use('/users', userController);
-app.use('/posts', postController);
-
-
-const start = async () => {
+app.listen(2555, async function(){
     await connect();
-
-    app.listen(2800, async () => {
-        console.log('Listening on port 2800');
-    });
-}
-
-
-module.exports = start;
+    console.log('Listening on port 2555')
+});
