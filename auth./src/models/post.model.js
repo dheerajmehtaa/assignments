@@ -1,13 +1,13 @@
 const { Schema, model} = require('mongoose');
 
 const postSchema = new Schema({
-    title: {type: String, required: true},
-    body: {type: String, required: true},
-    user: {
+   user: {
         type: Schema.Types.ObjectId,
         ref: 'user',
         required: true
-    }
+    },
+    profile_photo_url: { type: String, required: true },
+    roles: [{ type: String }],
 }, {
     versionKey: false,
     timestamps: true
