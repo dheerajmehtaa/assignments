@@ -6,15 +6,16 @@ class AddItem extends React.Component {
     this.state = {
       productName: "",
       productPrice: 0,
+      recipe:""
     };
   }
   render() {
     return (
       <form
-        className="row mb-5"
+        className="col mb-3 ml-5"
         onSubmit={(e) => {
           e.preventDefault();
-          this.props.addItem(this.state.productName,Number(this.state.productPrice));
+          this.props.addItem(this.state.productName,Number(this.state.productPrice),this.state.recipe);
         }}
       >
         <div className="mb-3 col-4">

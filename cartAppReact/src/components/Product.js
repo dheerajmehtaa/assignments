@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Product(props) {
   return (
-    <div className="row mt-3">
+    <div className="col ml-28">
       <div className="col-5">
         <h2>
           {props.product.name}

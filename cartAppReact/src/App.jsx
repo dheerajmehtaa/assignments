@@ -9,13 +9,13 @@ import AddItem from "./components/AddItem";
 function App() {
   const products = [
     {
-      price: 99999,
-      name: "IPhone 10S Max",
+      price: 999,
+      name: "Biryani",
       quantity: 0,
     },
     {
-      price: 9999,
-      name: "Redmi Note 10S Max",
+      price: 1199,
+      name: "Shahi Paneer",
       quantity: 0,
     },
   ];
@@ -75,7 +75,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="container mt-5">
+      <main className="col container mt-5">
         <AddItem addItem={addItem} />
         <ProductList
           productList={productList}
